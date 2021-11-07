@@ -23,6 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "gdgdhhssgdg46466464kfs502$Hd%k")
 
+PASSWORD_DB = os.environ.get("PASSWORD_ENV", "fdgfgfhhfhf")
+HOST_DB = os.environ.get("HOST_ENV", "111.111.111")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
@@ -76,13 +79,14 @@ WSGI_APPLICATION = 'regions.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gis',
         'USER': 'postgres',
-        'PASSWORD': os.environ.get("PASSWORD_ENV", "fdgfgfhhfhf"),
-        'HOST': os.environ.get("HOST_ENV", "111.111.111"),
+        'PASSWORD': PASSWORD_DB,
+        'HOST': HOST_DB,
         'PORT': '5432',
         'OPTIONS':
             {

@@ -91,7 +91,7 @@ DATABASES = {
         'PORT': '5432',
         'OPTIONS':
             {
-                'options': '-c search_path=public'
+                'options': '-c search_path=regions'
             }
     }
 }
@@ -103,8 +103,7 @@ DATABASES['default']['USER'] = 'postgres'
 DATABASES['default']['HOST'] = HOST_DB
 DATABASES['default']['PASSWORD'] = PASSWORD_DB
 
-print("**" * 25)
-print(DATABASES)
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 

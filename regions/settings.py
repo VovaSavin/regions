@@ -90,7 +90,7 @@ DATABASES = {
         'PORT': '5432',
         'OPTIONS':
             {
-                'options': '-c search_path=uvecon_test'
+                'options': '-c search_path=public'
             }
     }
 }

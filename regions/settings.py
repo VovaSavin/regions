@@ -81,29 +81,29 @@ WSGI_APPLICATION = 'regions.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'gis',
-#         'USER': 'postgres',
-#         'PASSWORD': PASSWORD_DB,
-#         'HOST': HOST_DB,
-#         'PORT': '5432',
-#         'OPTIONS':
-#             {
-#                 'options': '-c search_path=public'
-#             }
-#     }
-# }
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'gis',
+        'USER': 'postgres',
+        'PASSWORD': PASSWORD_DB,
+        'HOST': HOST_DB,
+        'PORT': '5432',
+        'OPTIONS':
+            {
+                'options': '-c search_path=public'
+            }
+    }
+}
 
 db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 DATABASES['default']['NAME'] = 'gis'
 DATABASES['default']['USER'] = 'postgres'
 DATABASES['default']['HOST'] = HOST_DB
 DATABASES['default']['PASSWORD'] = PASSWORD_DB
-DATABASES['default'].update(db_from_env)
-print("**"*25)
+
+print("**" * 25)
 print(DATABASES)
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

@@ -29,7 +29,7 @@ HOST_DB = os.environ.get("HOST_ENV", "111.111.111")
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["regions-1914.herokuapp.com", '127.0.0.1']
 
 # Application definition
 
